@@ -350,7 +350,8 @@ public class MediaActivity extends Activity implements View.OnClickListener {
         thumbnailGenerator = new ThumbnailGenerator(this);
         galleryDirChooser = new GalleryDirChooser(this, findViewById(R.id.topPanel), thumbnailGenerator, storage);
         galleryMediaChooser = new GalleryMediaChooser(galleryView, galleryDirChooser, storage, thumbnailGenerator);
-        storage.setSortMode(MediaStorage.SORT_MODE_MERGE);
+//        storage.setSortMode(MediaStorage.SORT_MODE_MERGE);
+        storage.setSortMode(MediaStorage.SORT_MODE_VIDEO);
         storage.startFetchmedias();
         storage.setOnMediaDirChangeListener(new MediaStorage.OnMediaDirChange() {
             @Override

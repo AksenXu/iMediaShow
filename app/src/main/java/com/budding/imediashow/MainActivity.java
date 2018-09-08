@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        loadLibs();
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +39,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Example of a call to a native method
         TextView tv = (TextView) findViewById(R.id.sample_text);
         tv.setText(stringFromJNI());
+    }
+    private void loadLibs(){
+        System.loadLibrary("live-openh264");
+        System.loadLibrary("QuCore-ThirdParty");
+        System.loadLibrary("QuCore");
+        System.loadLibrary("FaceAREngine");
+        System.loadLibrary("AliFaceAREngine");
     }
 
     @Override
@@ -68,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public native String stringFromJNI();
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent("com.duanqu.qupai.action.import");
+        Intent intent = new Intent("com.duanqu.qupai.action.import.setting");
         startActivity(intent);
     }
 
