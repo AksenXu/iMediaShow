@@ -1,5 +1,6 @@
 package com.budding.imediashow;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.support.design.widget.FloatingActionButton;
@@ -10,7 +11,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     // Used to load the 'native-lib' library on application startup.
     static {
@@ -65,4 +66,10 @@ public class MainActivity extends AppCompatActivity {
      * which is packaged with this application.
      */
     public native String stringFromJNI();
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent("com.duanqu.qupai.action.import");
+        startActivity(intent);
+    }
+
 }

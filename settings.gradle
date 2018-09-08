@@ -1,1 +1,7 @@
 include ':app'
+include ':3rd:AliyunImport:import_demo'
+include ':3rd:AliyunVideoSdk'
+include ':3rd:AlivcCore'
+include ':3rd:AliyunView'
+include ':3rd:AliyunCrop:crop_demo'
+include ':3rd:AliyunFileDownLoader:downloadermanager'
